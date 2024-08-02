@@ -4,6 +4,10 @@ import CarouselBackButton from "./CarouselBackButton";
 import CarouselCard from "../CarouselCard/CarouselCard";
 import CarouselNextButton from "./CarouselNextButton";
 
+import carouselImg1 from "../../assets/carousel-placeholder1.png";
+import carouselImg2 from "../../assets/carousel-placeholder2.png";
+import carouselImg3 from "../../assets/carousel-placeholder3.png";
+
 import styles from "./Carousel.module.scss";
 
 const Carousel = () => {
@@ -11,9 +15,9 @@ const Carousel = () => {
 
     // placeholder carousel content
     const carouselList = [
-        {id: 1, title: "Compound Bows"},
-        {id: 2, title: "Recurve Bows"},
-        {id: 3, title: "Traditional Bows"},
+        {id: 1, title: "Compound Bows", img: carouselImg1},
+        {id: 2, title: "Recurve Bows", img: carouselImg2},
+        {id: 3, title: "Traditional Bows", img: carouselImg3},
     ]
 
     const goToPrev = () => {
@@ -24,10 +28,15 @@ const Carousel = () => {
         setCurrentIndex((index) => (index + 1) % carouselList.length)
     }
 
-    
-
     return (
-        <div className={styles.Carousel}>
+        <div 
+            className={styles.Carousel} 
+            style={{
+                backgroundImage: `url(${carouselList[currentIndex].img})`, 
+                backgroundSize: 'cover', 
+                backgroundRepeat: 'no-repeat'
+                }}
+        >
             <button className={styles.Button} onClick={goToPrev}>
                 <CarouselBackButton/>
             </button>

@@ -2,12 +2,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh;
+    height: 40vh;
     width: 100%;
     border: 1px solid black;
+    background-color: transparent;
 }
 
 .Button {
     padding: 1em;
-    margin: 5px;
+    height: 100%;
+    border: none;
+    background-color: transparent;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 }
