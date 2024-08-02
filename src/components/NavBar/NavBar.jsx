@@ -6,13 +6,7 @@ const NavBar = () => {
     return (
         <nav className={styles.NavBar}>
             <NavLink className={styles.Link} to="/">
-                Compound Bows
-            </NavLink>
-            <NavLink className={styles.Link} to="/">
-                Recurve Bows
-            </NavLink>
-            <NavLink className={styles.Link} to="/">
-                Traditional Bows
+                Bows
             </NavLink>
             <NavLink className={styles.Link} to="/">
                 Arrows
