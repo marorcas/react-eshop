@@ -1,0 +1,15 @@
+.ItemCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.Img {
+    // placeholder styling
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+    margin: 5px;
+}
