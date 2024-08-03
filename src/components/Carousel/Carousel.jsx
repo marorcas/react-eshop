@@ -4,9 +4,9 @@ import CarouselBackButton from "./CarouselBackButton";
 import CarouselCard from "../CarouselCard/CarouselCard";
 import CarouselNextButton from "./CarouselNextButton";
 
-import carouselImg1 from "../../assets/carousel-placeholder1.png";
-import carouselImg2 from "../../assets/carousel-placeholder2.png";
-import carouselImg3 from "../../assets/carousel-placeholder3.png";
+import carouselImg1 from "../../assets/carousel-compound.jpg";
+import carouselImg2 from "../../assets/carousel-recurve.jpg";
+import carouselImg3 from "../../assets/carousel-traditional.jpg";
 
 import styles from "./Carousel.module.scss";
 
@@ -34,7 +34,8 @@ const Carousel = () => {
             style={{
                 backgroundImage: `url(${carouselList[currentIndex].img})`, 
                 backgroundSize: 'cover', 
-                backgroundRepeat: 'no-repeat'
+                backgroundRepeat: 'no-repeat',
+                backgroundPosition: 'bottom'
                 }}
         >
             <button className={styles.Button} onClick={goToPrev}>

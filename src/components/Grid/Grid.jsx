@@ -28,12 +28,7 @@ const Grid = () => {
       {id: 17, item: "Item 17"}, 
       {id: 18, item: "Item 18"}, 
       {id: 19, item: "Item 19"}, 
-      {id: 20, item: "Item 20"},
-      {id: 21, item: "Item 21"}, 
-      {id: 22, item: "Item 22"}, 
-      {id: 23, item: "Item 23"}, 
-      {id: 24, item: "Item 24"}, 
-      {id: 25, item: "Item 25"},
+      {id: 20, item: "Item 20"}
     ]
 
     return (
