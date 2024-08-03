@@ -4,7 +4,6 @@
     align-items: center;
     height: 80vh;
     width: 100%;
-    border: 1px solid black;
     overflow: hidden; /* Hide overflow from the button hover */
     position: relative; /* Hide overflow from the button hover */
 }
@@ -21,4 +20,8 @@
         transform: scale(1.2);
         cursor: url('../../assets/cursor-hover.svg'), auto;
     }
+}
+
+.Icon:hover {
+    cursor: url('../../assets/cursor-hover.svg'), auto;
 }

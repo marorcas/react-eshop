@@ -1,6 +1,6 @@
 const Logo = () => {
     return (
-        <h2>Shop Logo</h2>
+        <h2>AIMX</h2>
     )
 }
 

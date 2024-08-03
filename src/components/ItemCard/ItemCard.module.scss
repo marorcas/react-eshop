@@ -4,6 +4,11 @@
     justify-content: center;
     align-items: center;
     border: 1px solid black;
+
+    &:hover {
+        transform: scale(1.1);
+        cursor: url('../../assets/cursor-hover.svg'), auto;
+    }
 }
 
 .Img {
@@ -12,4 +17,8 @@
     width: 150px;
     border: 1px solid black;
     margin: 5px;
+
+    &:hover {
+        cursor: url('../../assets/cursor-hover.svg'), auto;
+    }
 }
