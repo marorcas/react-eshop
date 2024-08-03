@@ -1,4 +1,4 @@
-import { data } from "./data.js"
+import { data } from "./data"
 import { doc, collection, getDoc, getDocs, writeBatch } from "firebase/firestore";
 import { db } from "../config/firestore";
 import { v4 as uuid } from 'uuid'; // package to generate unique id's for each doc
@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid'; // package to generate unique id's for each d
 // add multiple docs at once
 export const populateFirestoreDb = async () => {
   try {
-    const collectionRef = collection(db, "bows");
+    const collectionRef = collection(db, "items");
     const snapshot = await getDocs(collectionRef);
 
     // only add items if the collection is empty
@@ -28,16 +28,14 @@ export const populateFirestoreDb = async () => {
   }
 };
 
-// export const getAllItems = async () => {
-//   const collectionRef = collection(db, "bows");
-//   const snapshot = await getDocs(collectionRef);
-//   console.log(snapshot);
-//   const cleanData = snapshot.docs.map((doc) => {
-//     return { id: doc.id, ...doc.data() };
-//   });
-//   console.log(cleanData);
-//   return cleanData;
-// };
+export const getAllItems = async () => {
+  const collectionRef = collection(db, "items");
+  const snapshot = await getDocs(collectionRef);
+  const cleanData = snapshot.docs.map((doc) => {
+    return { id: doc.id, ...doc.data() };
+  });
+  return cleanData;
+};
 
 // export const getItemById = async (id) => {
 //   // get the reference

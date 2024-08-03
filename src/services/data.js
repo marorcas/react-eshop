@@ -74,7 +74,7 @@ export const data = [
                 "65lbs"
             ],
         },
-        imageUrl: "https://ozhuntingandbows.com.au/wp-content/uploads/2024/05/Black-Elk-bow.png",
+        imageUrl: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.ozhuntingandbows.com.au%2Fwp-content%2Fuploads%2F2020%2F08%2FBlack-Elk-bow.png&f=1&nofb=1&ipt=9c8a5b56651915e93746bacf07805e528233c3faf907712bd36d089d67bd2ed2&ipo=images",
         quantity: 5,
         favourited: false
     },
@@ -255,7 +255,7 @@ export const data = [
                 "60lbs"
             ],
         },
-        imageUrl: "https://ozhuntingandbows.com.au/wp-content/uploads/2024/05/montana-1.jpg",
+        imageUrl: "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fimage.sportsmansguide.com%2Fadimgs%2Fl%2F1%2F187384_ts.jpg&f=1&nofb=1&ipt=b358e36128ca694b55a544147e01b1e5ab77de9b50655fbcc671ae8e1e954ff9&ipo=images",
         quantity: 5,
         favourited: false
     },

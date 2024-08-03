@@ -5,10 +5,10 @@ const ItemCard = ({ item }) => {
         <article className={styles.ItemCard}>
             <img 
                 className={styles.Img}
-                src={item.img}
+                src={item.imageUrl}
             />
-            <p>{item.item}</p>
-            <p>Item price</p>
+            <p>{item.name}</p>
+            <p>${item.price}</p>
         </article>
     )
 }
