@@ -13,12 +13,12 @@
     padding: 1em;
     height: 100%;
     border: none;
-    background-color: rgba(black, 0.1);
+    background-color: rgba(black, 0.2);
     transition: transform 0.3s ease; /* Smooth transition for scaling */
 
 
     &:hover {
         transform: scale(1.2);
-        cursor: pointer;
+        cursor: url('../../assets/cursor-hover.svg'), auto;
     }
 }

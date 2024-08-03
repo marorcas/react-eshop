@@ -5,7 +5,7 @@ const ItemCard = ({ item }) => {
         <article className={styles.ItemCard}>
             <img 
                 className={styles.Img}
-                src=""
+                src={item.img}
             />
             <p>{item.item}</p>
             <p>Item price</p>

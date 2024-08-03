@@ -5,7 +5,7 @@ import CarouselCard from "../CarouselCard/CarouselCard";
 import CarouselNextButton from "./CarouselNextButton";
 
 import carouselImg1 from "../../assets/carousel-compound.jpg";
-import carouselImg2 from "../../assets/carousel-recurve.jpg";
+import carouselImg2 from "../../assets/carousel-recurve.jpeg";
 import carouselImg3 from "../../assets/carousel-traditional.jpg";
 
 import styles from "./Carousel.module.scss";
