@@ -37,10 +37,31 @@ export const getAllItems = async () => {
   return cleanData;
 };
 
+export const getItemsByCategory = (items, itemsCategory) => {
+  const filteredByCategory = items.filter((item) => item.category === itemsCategory);
+
+  return filteredByCategory;
+}
+
 export const getItemsByType = (items, itemsType) => {
-  const filteredByType = items.filter((item) => item.category === itemsType);
+  const filteredByType = items.filter((item) => item.type.includes(itemsType));
 
   return filteredByType;
+}
+
+export const getItemTitle = (item) => {
+  let itemName = item.brand + " " + item.name;
+  
+    if (item.type.includes("accessory")) {
+        itemName += " " + item.type[1].charAt(0).toUpperCase() + item.type[1].slice(1);
+    } else if (item.type.includes("arrow")) {
+        itemName += " " + item.type[0].charAt(0).toUpperCase() + item.type[0].slice(1) + "s";
+    } else {
+        itemName += " " + item.type[1].charAt(0).toUpperCase() + item.type[1].slice(1);
+        itemName += " " + item.type[0].charAt(0).toUpperCase() + item.type[0].slice(1);
+    }
+
+    return itemName;
 }
 
 // export const getItemById = async (id) => {

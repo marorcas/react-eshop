@@ -1,3 +1,20 @@
+.Link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    text-decoration: none;
+    padding: 0 2em;
+
+    &:hover {
+        cursor: url('../../assets/cursor-hover.svg'), auto;
+    }
+}
+
+.Aim {
+    color: white;
+}
+
 .X {
     color: orangered;
 }

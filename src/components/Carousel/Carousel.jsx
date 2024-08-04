@@ -13,11 +13,10 @@ import styles from "./Carousel.module.scss";
 const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
 
-    // placeholder carousel content
     const carouselList = [
-        {id: 1, title: "Compound Bows", img: carouselImg1},
-        {id: 2, title: "Recurve Bows", img: carouselImg2},
-        {id: 3, title: "Traditional Bows", img: carouselImg3},
+        {id: 1, title: "Compound Bows", img: carouselImg1, address:"/bows/compound"},
+        {id: 2, title: "Recurve Bows", img: carouselImg2, address: "/bows/recurve"},
+        {id: 3, title: "Traditional Bows", img: carouselImg3, address: "/bows/traditional"},
     ]
 
     const goToPrev = () => {

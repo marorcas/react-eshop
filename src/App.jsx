@@ -23,7 +23,8 @@ function App() {
         <ItemsContextProvider>
           <Routes>
             <Route path="/" element={<LandingPage />} />
-            <Route path="/:itemsType" element={<ItemsPage />} />
+            <Route path="/:itemsCategory" element={<ItemsPage />} />
+            <Route path="/:itemsCategory/:itemsType" element={<ItemsPage />} />
             <Route path="/:id" element={<ItemPage />} />
           </Routes>
         </ItemsContextProvider>

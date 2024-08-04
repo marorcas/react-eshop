@@ -4,7 +4,7 @@ import styles from "./CarouselCard.module.scss";
 
 const CarouselCard = ({ carouselItem }) => {
     return (
-        <NavLink className={styles.CarouselCard} to="/">
+        <NavLink className={styles.CarouselCard} to={carouselItem.address}>
             {carouselItem.title}
         </NavLink>
     )

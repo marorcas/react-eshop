@@ -2,7 +2,7 @@ export const data = [
     {
         // recurves
         name: "Sage",
-        brand: "Samick Archery",
+        brand: "Samick",
         category: "bows",
         type: ["bow", "recurve"],
         price: "249.95",
@@ -29,7 +29,7 @@ export const data = [
 
     {
         name: "Grizzly",
-        brand: "Bear Archery",
+        brand: "Bear",
         category: "bows",
         type: ["bow", "recurve"],
         price: "659.95",
@@ -387,7 +387,7 @@ export const data = [
 
     {
         name: "Guardian",
-        brand: "Mantra Archery",
+        brand: "Mantra",
         category: "accessories",
         type: ["accessory", "arm guard"],
         price: "34.95",
@@ -399,7 +399,7 @@ export const data = [
 
     {
         name: "Deerskin",
-        brand: "Neet Archery",
+        brand: "Neet",
         category: "accessories",
         type: ["accessory", "glove"],
         price: "69.95",
@@ -411,7 +411,7 @@ export const data = [
 
     {
         name: "Wanderer",
-        brand: "Mantra Archery",
+        brand: "Mantra",
         category: "accessories",
         type: ["accessory", "quiver"],
         price: "74.95",
