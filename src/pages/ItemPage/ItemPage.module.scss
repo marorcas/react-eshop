@@ -1,0 +1,39 @@
+.ItemPage {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.ItemPageLeft {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 350px;
+    border: 1px solid black;
+    padding: 1em;
+    margin: 2em;
+    gap: 1em;
+}
+
+.Img {
+    height: 300px;
+}
+
+.ItemPageRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2em;
+    border: 1px solid black;
+}
+
+.Price {
+    display: block;
+    padding: 1em;
+    margin: 1em;
+    background-color: rgb(221, 221, 221);
+}

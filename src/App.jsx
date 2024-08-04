@@ -8,6 +8,7 @@ import { populateFirestoreDb } from "./services/data-service";
 import ItemsContextProvider from "./context/ItemsContextProvider/ItemsContextProvider";
 import ItemsPage from "./pages/ItemsPage/ItemsPage";
 import ItemPage from "./pages/ItemPage/ItemPage";
+import ContentLoader from "./container/ContentLoader/ContentLoader";
 
 function App() {
 
@@ -21,12 +22,15 @@ function App() {
         <Header/>
         <NavBar/>
         <ItemsContextProvider>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/:itemsCategory" element={<ItemsPage />} />
-            <Route path="/:itemsCategory/:itemsType" element={<ItemsPage />} />
-            <Route path="/:id" element={<ItemPage />} />
-          </Routes>
+          <ContentLoader>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/:itemsCategory/:itemsType/:id" element={<ItemPage />} />
+              <Route path="/:itemsCategory/:itemsType" element={<ItemsPage />} />
+              <Route path="/:itemsCategory/:id" element={<ItemPage />} />
+              <Route path="/:itemsCategory" element={<ItemsPage />} />
+            </Routes>
+          </ContentLoader>
         </ItemsContextProvider>
       </BrowserRouter>
     </>

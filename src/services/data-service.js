@@ -49,7 +49,7 @@ export const getItemsByType = (items, itemsType) => {
   return filteredByType;
 }
 
-export const getItemTitle = (item) => {
+export const getItemName = (item) => {
   let itemName = item.brand + " " + item.name;
   
     if (item.type.includes("accessory")) {
@@ -64,17 +64,9 @@ export const getItemTitle = (item) => {
     return itemName;
 }
 
-// export const getItemById = async (id) => {
-//   // get the reference
-//   const docRef = doc(db, "bows", id);
-//   // look up the document based on the reference
-//   const snapshot = await getDoc(docRef);
-//   // if a document with id doesn't exist throw an error
-//   if (!snapshot.exists()) {
-//     throw new Error("Could not find item with id " + id);
-//   }
-//   // otherwise we get the document to grab the data
-//   return { id: snapshot.id, ...snapshot.data() };
-//   // data() doesn't return the id of the document
-//   // return snapshot.data() - THIS WILL STILL WORK
-// };
+export const getItemById = (items, id) => {
+  const item = items.filter((item) => item.id === id);
+
+  // so it returns as a single object instead of an array with one object
+  return item[0];
+};
