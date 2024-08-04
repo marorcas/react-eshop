@@ -38,7 +38,7 @@ export const getAllItems = async () => {
 };
 
 export const getItemsByType = (items, itemsType) => {
-  const filteredByType = items.filter((item) => (item.type).includes(itemsType));
+  const filteredByType = items.filter((item) => item.category === itemsType);
 
   return filteredByType;
 }
