@@ -7,9 +7,9 @@ import placeholderImg from "../../assets/placeholder.jpg";
 import styles from "./Grid.module.scss";
 
 
-const Grid = () => {
+const Grid = ({ items }) => {
     // const [itemsList, setItemsList] = useState(null);
-    const { items } = useContext(ItemsContext);
+    // const { items } = useContext(ItemsContext);
 
     // placeholder list
     // const itemsList = [

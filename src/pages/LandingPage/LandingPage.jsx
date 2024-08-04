@@ -7,7 +7,7 @@ const LandingPage = () => {
     return (
       <div className={styles.LandingPage}>
         <Carousel/>
-        <Grid/>
+        <p>About this website</p>
       </div>
     );
 };

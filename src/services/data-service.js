@@ -37,6 +37,12 @@ export const getAllItems = async () => {
   return cleanData;
 };
 
+export const getItemsByType = (items, itemsType) => {
+  const filteredByType = items.filter((item) => (item.type).includes(itemsType));
+
+  return filteredByType;
+}
+
 // export const getItemById = async (id) => {
 //   // get the reference
 //   const docRef = doc(db, "bows", id);
