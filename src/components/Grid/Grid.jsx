@@ -2,7 +2,6 @@ import { useContext } from "react";
 
 import ItemCard from "../ItemCard/ItemCard";
 import { ItemsContext } from "../../context/ItemsContextProvider/ItemsContextProvider";
-import placeholderImg from "../../assets/placeholder.jpg";
 
 import styles from "./Grid.module.scss";
 

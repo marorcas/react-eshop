@@ -6,6 +6,8 @@ import ItemsPage from "../../pages/ItemsPage/ItemsPage";
 import ItemPage from "../../pages/ItemPage/ItemPage";
 import { getItemsByCategory, getItemsByType, getItemById } from "../../services/data-service";
 
+import styles from "./ContentLoader.module.scss";
+
 const ContentLoader = () => {
     const { itemsCategory, itemsType, id } = useParams();
 
@@ -54,7 +56,11 @@ const ContentLoader = () => {
 
     return (
         <>
-            {loading && <p>Loading content...</p>}
+            {loading && (
+                <div className={styles.Loading}>
+                    <span className={styles.Dots}></span>
+                </div>
+            )}
 
             {!loading && (
                 items?.length > 1 ? (
@@ -62,6 +68,10 @@ const ContentLoader = () => {
                 ) : (
                     <ItemPage/>
                 )
+            )}
+
+            {error && (
+                <p className={styles.Error}>{error.message}</p>
             )}
         </>
     )
