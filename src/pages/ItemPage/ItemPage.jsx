@@ -20,6 +20,7 @@ const ItemPage = () => {
             </div>
 
             <div className={styles.ItemPageRight}>
+                <h3>{items.brand} {items.name}</h3>
                 {/* <h3>{getItemName(items)}</h3> */}
                 <h2 className={styles.Price}>${items.price}</h2>
             </div>
