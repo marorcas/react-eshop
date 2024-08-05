@@ -5,8 +5,6 @@ import { getItemName } from "../../services/data-service";
 import styles from "./ItemCard.module.scss";
 
 const ItemCard = ({ item }) => {
-    const itemName = getItemName(item);
-
     let itemAddress;
 
     if (item.category === "bows") {
@@ -21,7 +19,7 @@ const ItemCard = ({ item }) => {
                 className={styles.Img}
                 src={item.imageUrl}
             />
-            <p className={styles.Name}>{itemName}</p>
+            <p className={styles.Name}>{getItemName(item)}</p>
             <p>${item.price}</p>
         </NavLink>
     )

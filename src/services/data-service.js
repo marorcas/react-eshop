@@ -1,5 +1,5 @@
 import { data } from "./data"
-import { doc, collection, getDoc, getDocs, writeBatch } from "firebase/firestore";
+import { doc, collection, getDoc, getDocs, writeBatch, query, where } from "firebase/firestore";
 import { db } from "../config/firestore";
 import { v4 as uuid } from 'uuid'; // package to generate unique id's for each doc
 
@@ -29,25 +29,76 @@ export const populateFirestoreDb = async () => {
 };
 
 export const getAllItems = async () => {
-  const collectionRef = collection(db, "items");
-  const snapshot = await getDocs(collectionRef);
-  const cleanData = snapshot.docs.map((doc) => {
-    return { id: doc.id, ...doc.data() };
-  });
-  return cleanData;
+  try {
+    const collectionRef = collection(db, "items");
+    const snapshot = await getDocs(collectionRef);
+    const cleanData = snapshot.docs.map((doc) => {
+      return { id: doc.id, ...doc.data() };
+    });
+    return cleanData;
+  } catch (e) {
+    return "Error: Could not retrive data.";
+  }
 };
 
-export const getItemsByCategory = (items, itemsCategory) => {
-  const filteredByCategory = items.filter((item) => item.category === itemsCategory);
+export const getItemsByCategory = async (category) => {
+  try {
+    const collectionRef = collection(db, "items");
 
-  return filteredByCategory;
-}
+    // // Create a query to filter by category
+    const q = query(collectionRef, where('category', '==', category));
 
-export const getItemsByType = (items, itemsType) => {
-  const filteredByType = items.filter((item) => item.type.includes(itemsType));
+    // // Execute the query
+    const snapshot = await getDocs(q);
 
-  return filteredByType;
-}
+    const items = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    
+    return items;
+  } catch (e) {
+    return "Error: Could not retrieve data.";
+  }
+};
+
+export const getItemsByType = async (type) => {
+  try {
+    const collectionRef = collection(db, "items");
+
+    // Create a query to filter by category
+    const q = query(collectionRef, where('type', 'array-contains', type));
+
+    // Execute the query
+    const snapshot = await getDocs(q);
+
+    const items = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    
+    return items;
+  } catch (e) {
+    return "Error: Could not retrieve data.";
+  }
+};
+
+export const getItemById = async (id) => {
+  try {
+    // get the reference
+    const docRef = doc(db, "items", id);
+    // look up the document based on the reference
+    const snapshot = await getDoc(docRef);
+    // if a document with id doesn't exist throw an error
+    if (!snapshot.exists()) {
+      throw new Error("Could not find an item with id " + id);
+    }
+    // otherwise we get the document to grab the data
+    return { id: snapshot.id, ...snapshot.data() };
+  } catch (e) {
+    return "Error: Could not retrieve data.";
+  }
+};
 
 export const getItemName = (item) => {
   let itemName = item.brand + " " + item.name;
@@ -63,10 +114,3 @@ export const getItemName = (item) => {
 
     return itemName;
 }
-
-export const getItemById = (items, id) => {
-  const item = items.filter((item) => item.id === id);
-
-  // so it returns as a single object instead of an array with one object
-  return item[0];
-};

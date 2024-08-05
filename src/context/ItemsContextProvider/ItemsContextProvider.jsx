@@ -7,10 +7,6 @@ export const ItemsContext = createContext(null);
 const ItemsContextProvider = ({ children }) => {
     const [items, setItems] = useState([]);
 
-    useEffect(() => {
-        getAllItems().then((items) => setItems(items));
-    }, []);
-
     return (
         <ItemsContext.Provider value={{ items, setItems }}>
             {children}

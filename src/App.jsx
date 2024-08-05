@@ -22,15 +22,12 @@ function App() {
         <Header/>
         <NavBar/>
         <ItemsContextProvider>
-          <ContentLoader>
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              <Route path="/:itemsCategory/:itemsType/:id" element={<ItemPage />} />
-              <Route path="/:itemsCategory/:itemsType" element={<ItemsPage />} />
-              <Route path="/:itemsCategory/:id" element={<ItemPage />} />
-              <Route path="/:itemsCategory" element={<ItemsPage />} />
+                <Route path="/:itemsCategory/:itemsType/:id" element={<ContentLoader />} />
+                <Route path="/:itemsCategory/:itemsType" element={<ContentLoader />} />
+                <Route path="/:itemsCategory" element={<ContentLoader />} />
             </Routes>
-          </ContentLoader>
         </ItemsContextProvider>
       </BrowserRouter>
     </>
