@@ -1,20 +1,12 @@
 import { NavLink } from "react-router-dom";
 
-import { getItemName } from "../../services/data-service";
+import { getItemAddress, getItemName } from "../../services/data-service";
 
 import styles from "./ItemCard.module.scss";
 
 const ItemCard = ({ item }) => {
-    let itemAddress;
-
-    if (item.category === "bows") {
-        itemAddress = `/bows/${item.type[1]}/${item.id}`;
-    } else {
-        itemAddress = `/${item.category}/${item.type[0]}/${item.id}`;
-    }
-    
     return (
-        <NavLink className={styles.ItemCard} to={itemAddress}>
+        <NavLink className={styles.ItemCard} to={getItemAddress(item)}>
             <img 
                 className={styles.Img}
                 src={item.imageUrl}

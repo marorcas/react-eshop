@@ -1,12 +1,24 @@
+import { NavLink } from "react-router-dom";
+
 import Logo from "../Logo/Logo";
-import SearchBar from "../SearchBar/SearchBar";
+import FavouriteListIcon from "./FavouriteListIcon";
+import CartIcon from "./CartIcon";
+// import SearchBar from "../SearchBar/SearchBar";
+
 import styles from "./Header.module.scss";
 
 const Header = () => {
     return (
         <div className={styles.Header}>
             <Logo/>
-            <SearchBar/>
+            {/* <SearchBar/> */}
+            <NavLink className={styles.FavouriteListIconContainer} to="/favourites">
+                <FavouriteListIcon/>
+            </NavLink>
+
+            <div className={styles.CartIconContainer}>
+                <CartIcon/>  
+            </div>
         </div>
     )
 }

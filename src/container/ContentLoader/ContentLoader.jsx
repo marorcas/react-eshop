@@ -4,14 +4,14 @@ import { useParams } from "react-router-dom";
 import { ItemsContext } from "../../context/ItemsContextProvider/ItemsContextProvider";
 import ItemsPage from "../../pages/ItemsPage/ItemsPage";
 import ItemPage from "../../pages/ItemPage/ItemPage";
-import { getItemsByCategory, getItemsByType, getItemById } from "../../services/data-service";
+import { getItemsByCategory, getItemsByType, getItemById, getItemName } from "../../services/data-service";
 
 import styles from "./ContentLoader.module.scss";
 
 const ContentLoader = () => {
     const { itemsCategory, itemsType, id } = useParams();
 
-    const { items, setItems } = useContext(ItemsContext);
+    const { items, setItems, setItemTitle } = useContext(ItemsContext);
 
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
@@ -24,6 +24,7 @@ const ContentLoader = () => {
                 .then((data) => {
                     setLoading(false);
                     setItems(data);
+                    setItemTitle(getItemName(data));
                 })
                 .catch((error) => {
                     setLoading(false);

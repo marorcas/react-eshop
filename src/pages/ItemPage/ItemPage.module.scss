@@ -37,3 +37,54 @@
     margin: 1em;
     background-color: rgb(221, 221, 221);
 }
+
+.Label {
+    padding: 1em;
+}
+
+.Select {
+    padding: 1em;
+    border-radius: 0;
+    border: 1px solid rgba($color: #2f2c23, $alpha: 0.3);
+    background-color: rgb(221, 221, 221);
+}
+
+.Buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+
+}
+
+.FavouriteBtn {
+    margin: 1em;
+    padding: 1em;
+    border-radius: 0;
+    border: none;
+    background-color: white;
+
+    &:hover {
+        cursor: url('../../assets/cursor-hover.svg'), auto;
+    }
+}
+
+.FavouritedIcon, .UnfavouritedIcon {
+    &:hover {
+        cursor: url('../../assets/cursor-hover.svg'), auto;
+    }
+}
+
+
+
+.CartBtn {
+    padding: 1em;
+    margin: 0 1em;
+    border-radius: 0;
+    border: 1px solid rgba($color: black, $alpha: 0.3);
+    background-color: orangered;
+
+    &:hover {
+        cursor: url('../../assets/cursor-hover.svg'), auto;
+    }
+}

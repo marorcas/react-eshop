@@ -1,5 +1,5 @@
 import { data } from "./data"
-import { doc, collection, getDoc, getDocs, writeBatch, query, where } from "firebase/firestore";
+import { doc, collection, getDoc, getDocs, updateDoc, writeBatch, query, where } from "firebase/firestore";
 import { db } from "../config/firestore";
 import { v4 as uuid } from 'uuid'; // package to generate unique id's for each doc
 
@@ -113,4 +113,75 @@ export const getItemName = (item) => {
     }
 
     return itemName;
+}
+
+export const getItemAddress = (item) => {
+  let itemAddress;
+
+  if (item.category === "bows") {
+    itemAddress = `/bows/${item.type[1]}/${item.id}`;
+  } else {
+    itemAddress = `/${item.category}/${item.type[0]}/${item.id}`;
+  }
+
+  return itemAddress;
+}
+
+export const getPageTitle = (category = null, type = null) => {
+  let title;
+
+  if (type) {
+    title = type.charAt(0).toUpperCase() + type.slice(1) + " ";
+    title += category.charAt(0).toUpperCase() + category.slice(1);
+  } else {
+    title = category.charAt(0).toUpperCase() + category.slice(1);
+  }
+
+  return title;
+}
+
+export const getVariantLabel = (item) => {
+  if (item.category === "bows") {
+    return "Handed:";
+  } else if (item.category === "arrows") {
+    return "Pack:";
+  }
+}
+
+export const getVariantOptions = (item) => {
+  const variantKey = Object.keys(item.variants)[0];
+  return item.variants[variantKey];
+}
+
+export const getFavouritedItems = async () => {
+  try {
+    const collectionRef = collection(db, "items");
+
+    // // Create a query to filter by category
+    const q = query(collectionRef, where('favourited', '==', true));
+
+    // // Execute the query
+    const snapshot = await getDocs(q);
+
+    const items = snapshot.docs.map(doc => ({
+      id: doc.id,
+      ...doc.data()
+    }));
+    
+    console.log(items)
+
+    return items;
+  } catch (e) {
+    return "Error: Could not retrieve data.";
+  }
+};
+
+export const updateFavourited = async (item, value) => {
+  try {
+    const docRef = doc(db, "items", item.id);
+    await updateDoc(docRef, { favourited: value });
+  } catch (error) {
+    throw new Error('Could not update favourited status.');
+  }
+  // return item;
 }

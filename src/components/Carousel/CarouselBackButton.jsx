@@ -1,4 +1,5 @@
 import styles from "./Carousel.module.scss";
+
 const CarouselBackButton = () => {
     return (
         <>
