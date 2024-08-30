@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      <BrowserRouter basename="/react-eshop">
+      <BrowserRouter>
         <Header/>
         <NavBar/>
         <ItemsContextProvider>
