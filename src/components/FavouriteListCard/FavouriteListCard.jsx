@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 import { getItemAddress, getItemById, getItemName, getVariantLabel, getVariantOptions, updateFavourited } from "../../services/data-service";
@@ -9,6 +9,7 @@ import styles from "./FavouriteListCard.module.scss";
 
 
 const FavouriteListCard = ({ item }) => {
+    const navigate = useNavigate();
     const [isFavourited, setIsFavourited] = useState(item.favourited);
 
     const toggleFavourite = async () => {
@@ -17,7 +18,7 @@ const FavouriteListCard = ({ item }) => {
 
         await updateFavourited(item, favouritedStatus);
 
-        window.location.reload();
+        navigate('/favourites');
     }
     return (
         <article className={styles.FavouriteListCardContainer}>
