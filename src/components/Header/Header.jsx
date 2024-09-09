@@ -12,7 +12,7 @@ const Header = () => {
         <div className={styles.Header}>
             <Logo/>
             {/* <SearchBar/> */}
-            <NavLink className={styles.FavouriteListIconContainer} to="/favourites">
+            <NavLink className={styles.FavouriteListIconContainer} to="/react-eshop/favourites">
                 <FavouriteListIcon/>
             </NavLink>
 

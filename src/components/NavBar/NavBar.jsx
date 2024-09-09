@@ -5,13 +5,13 @@ import styles from "./NavBar.module.scss";
 const NavBar = () => {
     return (
         <nav className={styles.NavBar}>
-            <NavLink className={styles.Link} to="/bows">
+            <NavLink className={styles.Link} to="/react-eshop/bows">
                 Bows
             </NavLink>
-            <NavLink className={styles.Link} to="/arrows">
+            <NavLink className={styles.Link} to="/react-eshop/arrows">
                 Arrows
             </NavLink>
-            <NavLink className={styles.Link} to="/accessories">
+            <NavLink className={styles.Link} to="/react-eshop/accessories">
                 Accessories
             </NavLink>
         </nav>

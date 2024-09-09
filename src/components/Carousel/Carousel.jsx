@@ -14,9 +14,9 @@ const Carousel = () => {
     const [currentIndex, setCurrentIndex] = useState(0)
 
     const carouselList = [
-        {id: 1, title: "Compound Bows", img: carouselImg1, address:"/bows/compound"},
-        {id: 2, title: "Recurve Bows", img: carouselImg2, address: "/bows/recurve"},
-        {id: 3, title: "Traditional Bows", img: carouselImg3, address: "/bows/traditional"},
+        {id: 1, title: "Compound Bows", img: carouselImg1, address:"react-eshop/bows/compound"},
+        {id: 2, title: "Recurve Bows", img: carouselImg2, address: "react-eshop/bows/recurve"},
+        {id: 3, title: "Traditional Bows", img: carouselImg3, address: "react-eshop/bows/traditional"},
     ]
 
     const goToPrev = () => {
