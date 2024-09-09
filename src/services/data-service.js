@@ -119,9 +119,9 @@ export const getItemAddress = (item) => {
   let itemAddress;
 
   if (item.category === "bows") {
-    itemAddress = `react-eshop/bows/${item.type[1]}/${item.id}`;
+    itemAddress = `bows/${item.type[1]}/${item.id}`;
   } else {
-    itemAddress = `react-eshop/${item.category}/${item.type[0]}/${item.id}`;
+    itemAddress = `${item.category}/${item.type[0]}/${item.id}`;
   }
 
   return itemAddress;
