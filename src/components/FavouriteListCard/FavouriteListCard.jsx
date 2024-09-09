@@ -9,7 +9,6 @@ import styles from "./FavouriteListCard.module.scss";
 
 
 const FavouriteListCard = ({ item }) => {
-    const navigate = useNavigate();
     const [isFavourited, setIsFavourited] = useState(item.favourited);
 
     const toggleFavourite = async () => {
@@ -18,7 +17,7 @@ const FavouriteListCard = ({ item }) => {
 
         await updateFavourited(item, favouritedStatus);
 
-        navigate('/favourites');
+        window.location.reload();
     }
     return (
         <article className={styles.FavouriteListCardContainer}>

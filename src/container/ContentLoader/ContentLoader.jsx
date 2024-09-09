@@ -7,6 +7,7 @@ import ItemPage from "../../pages/ItemPage/ItemPage";
 import { getItemsByCategory, getItemsByType, getItemById, getItemName } from "../../services/data-service";
 
 import styles from "./ContentLoader.module.scss";
+import { data } from "../../services/data";
 
 const ContentLoader = () => {
     const { itemsCategory, itemsType, id } = useParams();
@@ -49,7 +50,7 @@ const ContentLoader = () => {
                 .catch((error) => {
                     setLoading(false);
                     setError(error);
-                })
+                });
         } else {
             setLoading(false); // Set loading to false if no valid params
         }
