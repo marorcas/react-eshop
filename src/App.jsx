@@ -22,11 +22,11 @@ function App() {
         <NavBar/>
         <ItemsContextProvider>
             <Routes>
-              <Route path="/" element={<LandingPage />} />
-                <Route path="/:itemsCategory/:itemsType/:id" element={<ContentLoader />} />
-                <Route path="/:itemsCategory/:itemsType" element={<ContentLoader />} />
-                <Route path="/:itemsCategory" element={<ContentLoader />} />
-                <Route path="/favourites" element={<FavouriteListPage />} />
+              <Route path="/react-eshop" element={<LandingPage />} />
+                <Route path="/react-eshop/:itemsCategory/:itemsType/:id" element={<ContentLoader />} />
+                <Route path="/react-eshop/:itemsCategory/:itemsType" element={<ContentLoader />} />
+                <Route path="/react-eshop/:itemsCategory" element={<ContentLoader />} />
+                <Route path="/react-eshop/favourites" element={<FavouriteListPage />} />
             </Routes>
         </ItemsContextProvider>
       </BrowserRouter>
